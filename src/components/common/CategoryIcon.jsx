@@ -9,8 +9,8 @@ import {
   ShoppingBag,
   GraduationCap,
   TrendingUp,
-  Circle,
-} from "lucide-react";
+  Circle
+} from 'lucide-react'
 
 const ICON_MAP = {
   Wallet,
@@ -22,15 +22,15 @@ const ICON_MAP = {
   Heart,
   ShoppingBag,
   GraduationCap,
-  TrendingUp,
-};
+  TrendingUp
+}
 
 export const CategoryIcon = ({
   iconName,
   size = 20,
   color,
-  className = "",
+  className = ''
 }) => {
-  const IconComponent = ICON_MAP[iconName] || Circle;
-  return <IconComponent size={size} color={color} className={className} />;
-};
+  const IconComponent = ICON_MAP[iconName] || Circle
+  return <IconComponent size={size} color={color} className={className} />
+}
