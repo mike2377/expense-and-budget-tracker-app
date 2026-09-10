@@ -1,11 +1,12 @@
-import { useContext } from "react";
-import { TransactionsContext } from "../contexts/TransactionsContext";
+import { useContext } from 'react'
+import { TransactionsContext } from '../contexts/TransactionsContext'
 
 export const useTransactions = () => {
-  const context = useContext(TransactionsContext);
-  if (!context)
+  const context = useContext(TransactionsContext)
+  if (!context) {
     throw new Error(
-      "useTransactions must be used in TransactionsProvider",
-    );
-  return context;
-};
+      'useTransactions must be used in TransactionsProvider'
+    )
+  }
+  return context
+}

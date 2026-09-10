@@ -14,7 +14,7 @@ export const useFilters = (transactions) => {
       const matchType = typeFilter === FILTERS.ALL || t.type === typeFilter
       const matchCategory = categoryFilter === 'all' || t.categoryId === categoryFilter
       // note search
-      const matchSearch = !debouncedSearch || 
+      const matchSearch = !debouncedSearch ||
         (t.note && t.note.toLowerCase().includes(debouncedSearch.toLowerCase()))
       return matchType && matchCategory && matchSearch
     })

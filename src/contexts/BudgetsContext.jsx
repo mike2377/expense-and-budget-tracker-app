@@ -25,17 +25,17 @@ export const BudgetsProvider = ({ children }) => {
       const spent = monthFilteredTransactions
         .filter((t) => t.categoryId === cat.id && t.type === 'expense')
         .reduce((acc, t) => acc + t.amount, 0)
-      
+
       const budgetObj = budgets.find((b) => b.categoryId === cat.id && b.month === selectedMonth)
       const limit = budgetObj ? budgetObj.amount : 0
       const percentage = limit > 0 ? Math.min((spent / limit) * 100, 100) : 0
-      
-      return { 
-        category: cat, 
-        spent, 
-        limit, 
-        percentage, 
-        isOver: spent > limit && limit > 0 
+
+      return {
+        category: cat,
+        spent,
+        limit,
+        percentage,
+        isOver: spent > limit && limit > 0
       }
     })
   }, [categories, monthFilteredTransactions, budgets, selectedMonth])

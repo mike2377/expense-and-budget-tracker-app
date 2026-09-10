@@ -53,7 +53,7 @@ export const TransactionsProvider = ({ children }) => {
     deleteTransaction,
     addCategory,
     deleteCategory,
-    setTransactions,
+    setTransactions
   }), [
     transactions,
     categories,
@@ -65,7 +65,7 @@ export const TransactionsProvider = ({ children }) => {
     deleteTransaction,
     addCategory,
     deleteCategory,
-    setTransactions,
+    setTransactions
   ])
 
   return (
