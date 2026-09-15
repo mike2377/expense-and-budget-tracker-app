@@ -1,11 +1,11 @@
 :root {
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0 / 40%);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0 / 40%);
+  --shadow-sm: 0 2px 8px rgba(0 0 0 / 40%);
+  --shadow-md: 0 4px 20px rgba(0 0 0 / 40%);
 }
 
 [data-bs-theme="dark"] {
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0 / 30%);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0 / 40%);
+  --shadow-sm: 0 2px 8px rgba(0 0 0 / 30%);
+  --shadow-md: 0 4px 20px rgba(0 0 0 / 40%);
 }
 
 @keyframes fade-in {
@@ -13,6 +13,7 @@
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -44,31 +45,32 @@
 .btn-primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border: none;
-  box-shadow: 0 4px 15px rgba(102, 126, 234 / 30%);
+  box-shadow: 0 4px 15px rgba(102 126 234 / 30%);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234 / 40%);
+  box-shadow: 0 6px 20px rgba(102 126 234 / 40%);
 }
 
 .form-control,
 .form-select {
   border-radius: 10px;
-  border: 2px solid rgba(var(--bs-secondary-rgb), 0.15);
+  border: 2px solid rgba(var(--bs-secondary-rgb), 15%);
   padding: 0.6rem 1rem;
   transition: all 0.25s ease;
 }
+
 .form-control:focus,
 .form-select:focus {
   border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234 / 15%);
+  box-shadow: 0 0 0 3px rgba(102 126 234 / 15%);
 }
 
 .navbar {
   backdrop-filter: blur(20px);
-  background: rgba(var(--bs-body-bg-rgb), 0.85) !important;
-  border-bottom: 1px solid rgba(var(--bs-secondary-rgb), 0.1) !important;
+  background: rgba(var(--bs-body-bg-rgb), 85%) !important;
+  border-bottom: 1px solid rgba(var(--bs-secondary-rgb), 10%) !important;
 }
 
 .navbar-brand {
@@ -94,7 +96,7 @@
 }
 
 .transaction-item:hover {
-  background: rgba(var(--bs-primary-rgb), 0.05);
+  background: rgba(var(--bs-primary-rgb), 5%);
   transform: translateX(4px);
 }
 
@@ -107,7 +109,7 @@
 
 .progress {
   border-radius: 10px;
-  background: rgba(var(--bs-secondary-rgb), 0.15);
+  background: rgba(var(--bs-secondary-rgb), 15%);
   overflow: hidden;
 }
 
@@ -134,10 +136,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(var(--bs-secondary-rgb), 0.3);
+  background: rgba(var(--bs-secondary-rgb), 15%);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(var(--bs-secondary-rgb), 0.5);
+  background: rgba(var(--bs-secondary-rgb), 25%);
 }
