@@ -1,13 +1,14 @@
 :root {
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
-[data-bs-theme="dark"] {
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0 / 40%);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0 / 40%);
 }
 
-@keyframes fadeIn {
+[data-bs-theme="dark"] {
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0 / 30%);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0 / 40%);
+}
+
+@keyframes fade-in {
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -17,8 +18,9 @@
     transform: translateY(0);
   }
 }
+
 .animate-fade-in {
-  animation: fadeIn 0.4s ease-out;
+  animation: fade-in 0.4s ease-out;
 }
 
 .card {
@@ -27,6 +29,7 @@
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
 }
+
 .card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
@@ -37,14 +40,16 @@
   font-weight: 500;
   transition: all 0.25s ease;
 }
+
 .btn-primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border: none;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 15px rgba(102, 126, 234 / 30%);
 }
+
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 6px 20px rgba(102, 126, 234 / 40%);
 }
 
 .form-control,
@@ -57,7 +62,7 @@
 .form-control:focus,
 .form-select:focus {
   border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234 / 15%);
 }
 
 .navbar {
@@ -65,16 +70,19 @@
   background: rgba(var(--bs-body-bg-rgb), 0.85) !important;
   border-bottom: 1px solid rgba(var(--bs-secondary-rgb), 0.1) !important;
 }
+
 .navbar-brand {
   font-weight: 800;
   font-size: 1.3rem;
 }
+
 .nav-link {
   border-radius: 8px;
   padding: 0.5rem 1rem !important;
   margin: 0 0.2rem;
   transition: all 0.25s ease;
 }
+
 .nav-link.active {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white !important;
@@ -84,10 +92,12 @@
   border-left: 4px solid transparent;
   transition: all 0.25s ease;
 }
+
 .transaction-item:hover {
   background: rgba(var(--bs-primary-rgb), 0.05);
   transform: translateX(4px);
 }
+
 .transaction-item.income {
   border-left-color: #28c76a;
 }
@@ -100,13 +110,16 @@
   background: rgba(var(--bs-secondary-rgb), 0.15);
   overflow: hidden;
 }
+
 .progress-bar {
   border-radius: 10px;
   transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .progress-bar.bg-success {
   background: linear-gradient(90deg, #11998e, #38ef7d);
 }
+
 .progress-bar.bg-danger {
   background: linear-gradient(90deg, #eb3349, #f45c43);
 }
@@ -115,13 +128,16 @@
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(var(--bs-secondary-rgb), 0.3);
   border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(var(--bs-secondary-rgb), 0.5);
 }
