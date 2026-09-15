@@ -56,7 +56,7 @@
 .form-control,
 .form-select {
   border-radius: 10px;
-  border: 2px solid rgba(var(--bs-secondary-rgb), 15%);
+  border: 2px solid rgba(var(--bs-secondary-rgb) / 15%);
   padding: 0.6rem 1rem;
   transition: all 0.25s ease;
 }
@@ -69,8 +69,8 @@
 
 .navbar {
   backdrop-filter: blur(20px);
-  background: rgba(var(--bs-body-bg-rgb), 85%) !important;
-  border-bottom: 1px solid rgba(var(--bs-secondary-rgb), 10%) !important;
+  background: rgba(var(--bs-body-bg-rgb) / 85%) !important;
+  border-bottom: 1px solid rgba(var(--bs-secondary-rgb) / 10%) !important;
 }
 
 .navbar-brand {
@@ -96,20 +96,21 @@
 }
 
 .transaction-item:hover {
-  background: rgba(var(--bs-primary-rgb), 5%);
+  background: rgba(var(--bs-primary-rgb) / 5%);
   transform: translateX(4px);
 }
 
 .transaction-item.income {
   border-left-color: #28c76a;
 }
+
 .transaction-item.expense {
   border-left-color: #e74c3c;
 }
 
 .progress {
   border-radius: 10px;
-  background: rgba(var(--bs-secondary-rgb), 15%);
+  background: rgba(var(--bs-secondary-rgb) / 15%);
   overflow: hidden;
 }
 
@@ -136,10 +137,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(var(--bs-secondary-rgb), 15%);
+  background: rgba(var(--bs-secondary-rgb) / 15%);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(var(--bs-secondary-rgb), 25%);
+  background: rgba(var(--bs-secondary-rgb) / 25%);
 }
