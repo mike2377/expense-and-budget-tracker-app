@@ -152,12 +152,12 @@
   .navbar-brand span {
     font-size: 1.1rem;
   }
-  
+
   .nav-link {
     padding: 0.6rem 0.8rem !important;
     font-size: 0.9rem;
   }
-  
+
   .nav-link svg {
     width: 16px;
     height: 16px;
@@ -168,31 +168,31 @@
   .navbar {
     padding: 0.5rem 0 !important;
   }
-  
+
   /* mobile logo */
   .navbar-brand {
     font-size: 1rem !important;
   }
-  
+
   .navbar-brand > div {
     width: 32px !important;
     height: 32px !important;
   }
-  
+
+  .nav-link svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
   .navbar-brand > div svg {
     width: 16px !important;
     height: 16px !important;
   }
-  
+
   /* text links */
   .nav-link {
     padding: 0.4rem 0.6rem !important;
     font-size: 0.85rem !important;
-  }
-  
-  .nav-link svg {
-    width: 16px !important;
-    height: 16px !important;
   }
 
   .navbar .btn-outline-secondary {
@@ -209,11 +209,11 @@
     gap: 12px !important;
     padding: 12px !important;
   }
-  
+
   .transaction-item > div:first-child {
     width: 100%;
   }
-  
+
   .transaction-item > div:last-child {
     width: 100%;
     justify-content: space-between !important;
@@ -221,17 +221,17 @@
     padding-top: 8px;
     border-top: 1px solid rgba(var(--bs-secondary-rgb) / 10%);
   }
-  
+
   .transaction-item .h5 {
     font-size: 1.1rem !important;
   }
-  
+
   /* Adjust button size for mobile */
   .transaction-item button[style*="36px"] {
     width: 32px !important;
     height: 32px !important;
   }
-  
+
   .transaction-item button[style*="36px"] svg {
     width: 12px !important;
     height: 12px !important;
@@ -243,15 +243,15 @@
     font-size: 0.65rem !important;
     padding: 0.25rem 0.5rem !important;
   }
-  
+
   .transaction-item .flex-grow-1 min-w-0 {
     min-width: 0;
   }
-  
+
   .transaction-item .fw-bold {
     font-size: 0.95rem !important;
   }
-  
+
   .transaction-item small {
     font-size: 0.75rem !important;
   }
@@ -262,16 +262,16 @@
   .summary-card {
     padding: 1rem !important;
   }
-  
+
   .summary-card h3 {
     font-size: 1.2rem !important;
   }
-  
+
   .summary-card .icon-wrapper {
     width: 40px !important;
     height: 40px !important;
   }
-  
+
   .summary-card .icon-wrapper svg {
     width: 20px !important;
     height: 20px !important;
@@ -280,7 +280,7 @@
 
 /* Budget Cards */
 @media (max-width: 576px) {
-  .BudgetCard,
+  .budget-card,
   .card.p-3 {
     padding: 1rem !important;
   }
@@ -291,7 +291,7 @@
   .recharts-wrapper {
     font-size: 0.7rem !important;
   }
-  
+
   .recharts-legend-wrapper {
     font-size: 0.75rem !important;
   }
@@ -299,7 +299,7 @@
 
 /* Settings Page */
 @media (max-width: 768px) {
-  .SettingsPage form .row > div {
+  .settings-page form .row > div {
     margin-bottom: 8px;
   }
 }
