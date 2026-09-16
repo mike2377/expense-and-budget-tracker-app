@@ -1,4 +1,4 @@
-export const CURRENCY = 'XOF'
+export const CURRENCY = 'XAF'
 export const STORAGE_KEYS = {
   TRANSACTIONS: 'end_transactions',
   CATEGORIES: 'end_categories',
