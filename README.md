@@ -28,7 +28,7 @@ This project aims to:
 ### 📊 Real-time Summary
 
 - Displays **Total Balance**, **Total Income**, and **Total Expenses** for the selected month
-- Amounts formatted with `Intl.NumberFormat` in **FCFA (XOF)**
+- Amounts formatted with `Intl.NumberFormat` in **FCFA (XAF)**
 - Dynamic color coding (Green for income, Red for expenses, Blue for balance)
 - **Budget remaining** indicator
 
@@ -122,7 +122,7 @@ expense-and-budget-tracker-app/
 ── public/
 ├── src
 │   ├── assets
-        ├── images
+|   |   ├── images
 │   │   │   ├── d-budget.png
 │   │   │   ├── d-dashboard.png
 │   │   │   ├── d-setting.png
