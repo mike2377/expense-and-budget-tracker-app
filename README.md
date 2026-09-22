@@ -224,7 +224,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 | --- | --- |
 | `npm run dev` | Start Vite dev server |
 | `npm run lint` | Run Oxlint |
-| `npm run lint:fix` | Auto-fix lint issues |
+| `npm run lint:fix` | Autofix lint issues |
 
 ---
 
