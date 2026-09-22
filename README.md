@@ -260,3 +260,14 @@ Ensuring Summary, List, Charts, and Budgets always reflect the same data. **Solu
 - Managing **empty states**, **validation errors**, and **confirmation dialogs** for a polished UX
 
 ---
+
+## 🏽‍💻 Author
+
+**Kembou Keumoe Ivan Michael**
+Junior Fullstack Developer
+
+📩 Email: [kman39457@email.com](mailto:kman39457@email.com)
+🌍 Based in Cameroon | Open to remote opportunities
+🔗 GitHub: [github.com/mike2377](https://github.com/mike2377)
+
+---
