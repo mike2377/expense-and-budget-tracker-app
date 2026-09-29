@@ -21,9 +21,7 @@ export const TransactionsProvider = ({ children }) => {
   }, [setTransactions])
 
   const deleteTransaction = useCallback((id) => {
-    if (window.confirm('Confirm delete this transaction?')) {
-      setTransactions((prev) => prev.filter((t) => t.id !== id))
-    }
+    setTransactions((prev) => prev.filter((t) => t.id !== id))
   }, [setTransactions])
 
   const addCategory = useCallback((cat) => {
@@ -31,9 +29,7 @@ export const TransactionsProvider = ({ children }) => {
   }, [setCategories])
 
   const deleteCategory = useCallback((id) => {
-    if (window.confirm('Delete category ?')) {
-      setCategories((prev) => prev.filter((c) => c.id !== id))
-    }
+    setCategories((prev) => prev.filter((c) => c.id !== id))
   }, [setCategories])
 
   const monthFilteredTransactions = useMemo(() => {

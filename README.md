@@ -34,7 +34,7 @@ This project aims to:
 
 ### 🗂️ Categories
 
-- Ships with sensible defaults (Salary, Food, Transport, Rent, Entertainment, Health…)
+- Ships with sensible defaults (Salary, Food, Transport, Rent, Hobbies, Health…)
 - Each category has a **name**, **color**, and **Lucide icon**
 - Users can **add custom categories** and pick their color/icon
 - Categories separated by type (income vs. expense)
@@ -75,7 +75,7 @@ This project aims to:
 
 ### Languages & Frameworks
 
-- **React 18** (function components only)
+- **React** (function components only)
 - **Vite** (fast build tooling)
 - **React Router** (client-side routing)
 - **Bootstrap 5.3** (responsive grid, dark mode, components)
@@ -224,7 +224,6 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 | --- | --- |
 | `npm run dev` | Start Vite dev server |
 | `npm run lint` | Run Oxlint |
-| `npm run lint:fix` | Autofix lint issues |
 
 ---
 

@@ -5,13 +5,16 @@ import { TransactionForm } from "../components/transactions/TransactionForm";
 import { TransactionList } from "../components/transactions/TransactionList";
 import { TransactionFilters } from "../components/transactions/TransactionFilters";
 import { MonthSelector } from "../components/dashboard/MonthSelector";
+import { ConfirmDialog } from "../components/common/ConfirmDialog";
 import { Plus, Receipt } from "lucide-react";
 
 export const TransactionsPage = () => {
-  const { monthFilteredTransactions, selectedMonth, setSelectedMonth } =
+  const { monthFilteredTransactions, selectedMonth, setSelectedMonth, deleteTransaction } =
     useTransactions();
   const [showForm, setShowForm] = useState(false);
   const [editingTx, setEditingTx] = useState(null);
+
+  const [confirmState, setConfirmState] = useState({show: false, id: null})
 
   const {
     searchQuery,
@@ -31,6 +34,21 @@ export const TransactionsPage = () => {
     setShowForm(false);
     setEditingTx(null);
   };
+
+  const requestDeleteTransaction = (id) => {
+    setConfirmState({show: true, id})
+  }
+
+  const closeConfirmDialog = () => {
+    setConfirmState({show: false, id: null})
+  }
+
+  const handleConfirmDelete = () => {
+    if (confirmState.id) {
+      deleteTransaction(confirmState.id)
+    }
+    closeConfirmDialog()
+  }
 
   return (
     <div>
@@ -80,6 +98,15 @@ export const TransactionsPage = () => {
       <TransactionList
         transactions={filteredTransactions}
         onEdit={handleEdit}
+        onDelete={requestDeleteTransaction}
+      />
+
+      <ConfirmDialog
+        show={confirmState.show}
+        title='Delete transaction'
+        message='Are you sure you want to delete this transaction? is irreversible.'
+        onConfirm={handleConfirmDelete}
+        onCancel={closeConfirmDialog}
       />
     </div>
   );

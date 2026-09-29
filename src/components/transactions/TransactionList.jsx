@@ -3,7 +3,7 @@ import { TransactionItem } from './TransactionItem'
 import { EmptyState } from '../common/EmptyState'
 import { Receipt } from 'lucide-react'
 
-export const TransactionList = ({ transactions, onEdit }) => {
+export const TransactionList = ({ transactions, onEdit, onDelete }) => {
   const { categories, deleteTransaction } = useTransactions()
   if (transactions.length === 0) {
     return (
@@ -25,7 +25,7 @@ export const TransactionList = ({ transactions, onEdit }) => {
               transaction={t}
               category={cat}
               onEdit={onEdit}
-              onDelete={deleteTransaction}
+              onDelete={onDelete}
             />
           )
         })}

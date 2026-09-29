@@ -20,6 +20,7 @@ import { generateSeedTransactions } from '../data/seed'
 import { CategoryIcon } from '../components/common/CategoryIcon'
 import { formatCurrency } from '../utils/formatCurrency'
 import { calculateTotals } from '../utils/calculations'
+import { ConfirmDialog } from '../components/common/ConfirmDialog'
 
 export const SettingsPage = () => {
   const {
@@ -43,6 +44,8 @@ export const SettingsPage = () => {
 
   const balance = income - expense
 
+  const [confirmState, setConfirmState] = useState(null)
+
   const handleAdd = (e) => {
     e.preventDefault()
     if (!newCat.name.trim()) return
@@ -50,20 +53,28 @@ export const SettingsPage = () => {
     setNewCat({ name: '', type: 'expense', color: '#3498db', icon: 'Circle' })
   }
 
-  const handleSeedData = () => {
-    if (window.confirm('Add demo data?')) {
-      setTransactions((prev) => [...generateSeedTransactions(), ...prev])
-    }
+  const requestSeedData = () => {
+    setConfirmState({
+      title: 'Add demo data',
+      message: 'This will add transaction demo data. Continue?',
+      onConfirm: () => {
+        setTransactions((prev) => [...generateSeedTransactions(), ...prev])
+        setConfirmState(null)
+      },
+      onCancel: () => setConfirmState(null)
+    })
   }
 
   const handleClearData = () => {
-    if (
-      window.confirm(
-        'Delete ALL transactions ? This action is irreversible.'
-      )
-    ) {
-      setTransactions([])
-    }
+    setConfirmState({
+      title: 'Delete all data',
+      message: 'This action will delete all your transactions.',
+      onConfirm: () => {
+        setTransactions([])
+        setConfirmState(null)
+      },
+      onCancel: () => setConfirmState(null)
+    })
   }
 
   const availableIcons = [
@@ -242,7 +253,7 @@ export const SettingsPage = () => {
             <div className='d-flex gap-2'>
               <button
                 className='btn btn-outline-primary flex-fill d-flex align-items-center justify-content-center gap-2'
-                onClick={handleSeedData}
+                onClick={requestSeedData}
                 style={{ padding: '10px' }}
               >
                 <Sparkles size={18} />
@@ -408,6 +419,14 @@ export const SettingsPage = () => {
           </div>
         </div>
       </div>
+
+      <ConfirmDialog
+      show={!!confirmState}
+      title={confirmState?.title}
+      message={confirmState?.message}
+      onConfirm={confirmState?.onConfirm}
+      onCancel={confirmState?.onCancel}
+      />
     </div>
   )
 }

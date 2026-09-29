@@ -32,10 +32,10 @@ export const ConfirmDialog = ({
                 className='btn btn-outline-secondary flex-fill'
                 onClick={onCancel}
               >
-                Annuler
+                Cancel
               </button>
               <button className='btn btn-danger flex-fill' onClick={onConfirm}>
-                Confirmer
+                Confirm
               </button>
             </div>
           </div>
