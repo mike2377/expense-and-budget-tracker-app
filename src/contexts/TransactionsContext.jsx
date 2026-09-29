@@ -21,7 +21,7 @@ export const TransactionsProvider = ({ children }) => {
   }, [setTransactions])
 
   const deleteTransaction = useCallback((id) => {
-    if (window.confirm('Confirm delete this transaction ?')) {
+    if (window.confirm('Confirm delete this transaction?')) {
       setTransactions((prev) => prev.filter((t) => t.id !== id))
     }
   }, [setTransactions])

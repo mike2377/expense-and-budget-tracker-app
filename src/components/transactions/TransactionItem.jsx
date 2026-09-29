@@ -1,7 +1,7 @@
-import { Pencil, Trash2, TrendingUp, TrendingDown } from "lucide-react";
-import { formatCurrency } from "../../utils/formatCurrency";
-import { formatDate } from "../../utils/formatDate";
-import { CategoryIcon } from "../common/CategoryIcon";
+import { Pencil, Trash2 } from 'lucide-react'
+import { formatCurrency } from '../../utils/formatCurrency'
+import { formatDate } from '../../utils/formatDate'
+import { CategoryIcon } from '../common/CategoryIcon'
 
 export const TransactionItem = ({
   transaction,

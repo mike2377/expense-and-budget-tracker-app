@@ -3,6 +3,22 @@ import { EmptyState } from '../common/EmptyState'
 import { TrendingUp } from 'lucide-react'
 import { formatCurrency } from '../../utils/formatCurrency'
 
+const CustomTooltip = ({ active, payload, label }) => {
+	if (active && payload && payload.length) {
+		return (
+			<div className="bg-body border rounded-3 shadow p-3">
+				<p className="mb-2 fw-bold">{label}</p>
+				{payload.map((entry, index) => (
+					<p key={index} className="mb-1" style={{ color: entry.color }}>
+						{entry.name}: {formatCurrency(entry.value)}
+					</p>
+				))}
+			</div>
+		);
+	}
+	return null;
+};
+
 export const TrendChart = ({ data }) => {
   // least one month with income or expenses > 0.
   const hasData = data && data.some((d) => d.income > 0 || d.expense > 0)
@@ -14,22 +30,6 @@ export const TrendChart = ({ data }) => {
         icon={TrendingUp}
       />
     )
-  }
-
-  const CustomTooltip = ({ active, payload, label }) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className='bg-body border rounded-3 shadow p-3'>
-          <p className='mb-2 fw-bold'>{label}</p>
-          {payload.map((entry, index) => (
-            <p key={index} className='mb-1' style={{ color: entry.color }}>
-              {entry.name}: {formatCurrency(entry.value)}
-            </p>
-          ))}
-        </div>
-      )
-    }
-    return null
   }
 
   return (
@@ -47,7 +47,8 @@ export const TrendChart = ({ data }) => {
         </defs>
         <CartesianGrid strokeDasharray='3 3' stroke='rgba(128,128,128,0.2)' />
         <XAxis dataKey='month' stroke='currentColor' />
-        <YAxis stroke='currentColor' tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} />
+        <YAxis stroke='currentColor' tickFormatter={(v) => 
+          (v >= 1000 ? `${(v / 1000).toFixed(1)}K` : v)} />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
         <Area

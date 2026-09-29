@@ -38,7 +38,7 @@ export const BudgetCard = ({
           {category.name}
         </h6>
       </div>
-      {isOver && <span className='badge bg-danger'>Exceed</span>}
+      {isOver && <span className='badge bg-danger'>Exceeded</span>}
     </div>
 
     <div className='mb-3'>

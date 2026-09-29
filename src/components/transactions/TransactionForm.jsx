@@ -126,12 +126,12 @@ export const TransactionForm = ({ editingTx, onClose }) => {
               </div>
             </div>
 
-            {/* Montant */}
+            {/* Amount */}
             <div className='col-md-6'>
               <label className='form-label fw-semibold'>Amount (FCFA) *</label>
               <input
                 type='number'
-                step='0.01'
+                step='1'
                 className={`form-control ${touched.amount && errors.amount ? 'is-invalid' : ''}`}
                 value={formData.amount}
                 onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
@@ -184,7 +184,7 @@ export const TransactionForm = ({ editingTx, onClose }) => {
               />
             </div>
 
-            {/* Boutons */}
+            {/* Buttons */}
             <div className='col-12 d-flex gap-2 justify-content-end pt-3 border-top'>
               <button type='button' className='btn btn-outline-secondary' onClick={onClose}>
                 Cancel
