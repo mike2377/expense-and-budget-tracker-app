@@ -37,11 +37,9 @@ export const SettingsPage = () => {
     icon: 'Circle'
   })
 
-  // ✅ SOLUTION : Utiliser JSON.stringify pour forcer le recalcul
-  // quand le contenu de transactions change (pas juste la référence)
   const { income, expense } = useMemo(() => {
     return calculateTotals(transactions)
-  }, [JSON.stringify(transactions)]) // ← Changement clé ici
+  }, [transactions])
 
   const balance = income - expense
 

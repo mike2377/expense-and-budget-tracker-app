@@ -32,7 +32,10 @@ export const DashboardPage = () => {
   const balance = income - expense
   const budgetRemaining = useMemo(() => {
     const totalBudget = budgetStats.reduce((acc, b) => acc + b.limit, 0)
-    const totalSpent = budgetStats.reduce((acc, b) => acc + b.spent, 0)
+    const totalSpent = budgetStats.reduce((acc, b) => acc + (b.limit > 0 ? b.spent : 0), 0)
+    if (totalBudget === 0) {
+      return <span className='text-muted'>No budget set</span>
+    }
     return totalBudget - totalSpent
   }, [budgetStats])
 

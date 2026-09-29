@@ -18,12 +18,12 @@ export const MainLayout = () => {
 
   return (
     <div className="min-vh-100 d-flex flex-column">
-      <nav className="navbar navbar-expand-lg sticky-top py-3 shadow-sm">
+      <nav className="navbar navbar-expand-lg sticky-top shadow-sm">
         <div className="container">
           {/* Logo */}
           <NavLink
             to="/"
-            className="navbar-brand d-flex align-items-center gap-2"
+            className="navbar-brand d-flex align-items-center py-3 gap-2"
           >
             <div
               style={{
@@ -81,7 +81,7 @@ export const MainLayout = () => {
             <button
               className="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center"
               onClick={toggleTheme}
-              aria-label="Changer de theme"
+              aria-label="Toggle theme"
               style={{ width: "40px", height: "40px", padding: 0 }}
             >
               {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
