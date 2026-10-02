@@ -188,6 +188,7 @@ expense-and-budget-tracker-app/
 ├── package.json
 ├── package-lock.json
 ├── README.md
+├── vercel.json
 └── vite.config.js
 ```
 
@@ -216,7 +217,9 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+## 🚀 Live Demo
+
+🔗 [Deployed on Vercel](https://expense-and-budget-tracker-app.vercel.app/)
 
 ### Useful Scripts
 
