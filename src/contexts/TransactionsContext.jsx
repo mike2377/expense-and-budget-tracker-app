@@ -14,11 +14,13 @@ export const TransactionsProvider = ({ children }) => {
 
   const addTransaction = useCallback((tx) => {
     setTransactions((prev) => [{ ...tx, createdAt: Date.now() }, ...prev])
-  }, [setTransactions])
+    setSelectedMonth(tx.date.slice(0, 7))
+  }, [setTransactions, setSelectedMonth])
 
   const updateTransaction = useCallback((id, updatedTx) => {
     setTransactions((prev) => prev.map((t) => (t.id === id ? { ...t, ...updatedTx } : t)))
-  }, [setTransactions])
+    setSelectedMonth(updatedTx.date.slice(0, 7))
+  }, [setTransactions, setSelectedMonth])
 
   const deleteTransaction = useCallback((id) => {
     setTransactions((prev) => prev.filter((t) => t.id !== id))

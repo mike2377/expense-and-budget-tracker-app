@@ -4,7 +4,7 @@ import { EmptyState } from '../common/EmptyState'
 import { Receipt } from 'lucide-react'
 
 export const TransactionList = ({ transactions, onEdit, onDelete }) => {
-  const { categories, deleteTransaction } = useTransactions()
+  const { categories } = useTransactions()
   if (transactions.length === 0) {
     return (
       <EmptyState

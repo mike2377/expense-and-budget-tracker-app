@@ -31,21 +31,12 @@ export const DashboardPage = () => {
   )
   const balance = income - expense
   const budgetRemaining = useMemo(() => {
-    if (!budgetStats || Array.isArray(budgetStats)) {
-      return 0
-    }
+    if (!budgetStats || budgetStats.length === 0) return 0
 
-    const totalBudget = budgetStats.reduce((acc, b) => acc + (Number(b.limit) || 0), 0)
+    const budgetCategories = budgetStats.filter((b) => b.limit > 0)
 
-    const totalSpent = budgetStats.reduce((acc, b) => {
-      const limit = Number(b.limit) || 0
-      const spent = Number(b.spent) || 0
-      return acc + (limit > 0 ? spent : 0)
-    }, 0)
-
-    if (totalBudget === 0) {
-      return 0
-    }
+    const totalBudget = budgetCategories.reduce((acc, b) => acc + b.limit, 0)
+    const totalSpent = budgetCategories.reduce((acc, b) => acc + b.spent, 0)
 
     return totalBudget - totalSpent
   }, [budgetStats])
